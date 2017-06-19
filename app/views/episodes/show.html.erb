@@ -1,0 +1,8 @@
+<h1>Episode <%= @episode.number %></h1>
+
+<h3>All guests in this episodes:</h3>
+<% @episode.guests.each do |g| %>
+<%= g.name %><br>
+<% end %>
+
+<%= link_to 'Back', episodes_path %>

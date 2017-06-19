@@ -1,0 +1,18 @@
+<h1><%= @guest.name %>'s Page </h1>
+
+Name: <%= @guest.name %> <br>
+Occupation: <%= @guest.occupation %><br><br>
+
+<h3>Create a new appearance:</h5>
+<%= form_tag appearance_guest_path(@guest) do%>
+Episode Number: <br>
+<%= number_field_tag 'appearance[episode][number]'%><br><br>
+Rating (1-5 scale): <br>
+<%= number_field_tag 'appearance[rating]' %><br><br>
+    <%= submit_tag 'Add Appearance' %> <br><br>
+  <% end %>
+
+<h3><%= @guest.name %>'s all appearances:</h3>
+  <% @guest.episodes.each do |e| %>
+  Episode <%= e.number %><br>
+  <% end %>
